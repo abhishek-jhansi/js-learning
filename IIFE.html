@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color: grey; color: #fff;">
+    <h1>Imediate invoked Function Expressions(IIFE)</h1>
+
+    <script>
+(function hoola() //named IIFE
+{
+    console.log("DB connected");
+})();
+// all function wrap in a paranthisis and call by ();
+//Globle scop ke pollution se bachne ke liye IIFE use krte hai
+// after calling semicolmn(;) is compulsury otherwise other IIFE not run
+( //anonamouse IIFE
+    (name)=>{console.log(`DB is connected ${name}`);}
+) ("abhishek");
+
+    </script>
+</body>
+</html>

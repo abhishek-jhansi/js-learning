@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff; text-align: center;">
+    <h1>chai and js</h1>
+    <button id="stop">Stop</button>
+
+    <script>
+
+        /*   setTimeout(function () {
+               console.log("abhi is rocking");
+           }, 2000) */
+
+        /*   const sayAbhi = function () {
+               console.log("abhi is rocking");
+           }
+           setTimeout(sayAbhi, 2000) */
+        // here we give only function refrence
+
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = "Abhishek And JS"
+        }
+        const changeMe = setTimeout(changeText, 2000)
+        document.querySelector('#stop').addEventListener(
+            "click", function () {
+                clearTimeout(changeMe);
+                console.log("STOPPED");
+            }
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

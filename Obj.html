@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.75); color: #fff;">
+<h2>Object in js</h2>
+<script>
+
+// object literals
+const mysymble = Symbol("key1");
+const jsUser = {
+    name: "Abhishek",
+    "fullname": "abhishek dangi",
+    age: 20,
+   // mysymble : "key1",
+    [mysymble] : "key1",  // now this refer to symble and thisnis right way to write syble in object
+    location: "Jhansi",
+    email:"abhishek@gmail.com",
+    isLoggedIn: false,
+    lastLogInDays: ["monday", "thursday"]
+}
+console.log(jsUser.email);
+console.log(jsUser["email"]);  // both are right way to access object key's value
+// full name is not accessable by dot(.) notation
+console.log(jsUser["fullname"]);
+console.log(jsUser["lastLogInDays"][0]);
+console.log(jsUser["lastLogInDays"]);
+console.log(jsUser[mysymble]);
+console.log(typeof jsUser[mysymble]); // we getsymble as string so this is not correct
+
+jsUser.email = "abhshhek@chatgpt.com";  //change object value
+console.log(jsUser);
+//Object.freeze(jsUser);  // now objet is freezed so cant change value of object
+jsUser.email = "abhishek@gmail.com";
+//console.log(jsUser); // here email not changed because of freezed object
+ 
+jsUser.greetings = function(){
+    console.log("Good morning");
+}
+//console.log(jsUser.greetings());  // here we get error because object is freezed
+//console.log(jsUser.greetings());
+//console.log(jsUser.greetings); // here function is not execute display refrence only
+
+jsUser.greeting2 = function(){
+    console.log(`"Hello user "  ${this.name}`);
+}
+console.log(jsUser.greeting2());
+
+ 
+
+
+
+</script>
+    
+</body>
+</html>

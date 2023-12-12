@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121; color: #fff; text-align: center;">
+    <h4>ek array hai aur us array me kuchh additional property hai.<br> us array pr loop lgana hai aur <br>array ki
+        original property ko print krwana hai</h4>
+
+
+
+</body>
+<script>
+    Array.prototype.ExtraProperty = "abhishek";
+    // here ExtraProperty is not original property of array this is inserted by us
+    const myNewArray = [1, 2, 3, 4, 5];
+    // for (let v in myNewArray){
+    //     console.log(v);
+
+    // }
+    for (let v in myNewArray) {
+        if (myNewArray.hasOwnProperty(v)) {
+            console.log(v);
+        }
+    }
+// hasOwnProperty give us origibal property of array
+
+
+</script>
+
+</html>

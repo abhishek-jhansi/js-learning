@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff; text-align: center;">
+    <h1>chai and Yaaden with interval</h1>
+    <button id="stop">Stop</button>
+    <button id="start"> START</button>
+
+    <script>
+        const sayDate = function (str) {
+            console.log(str, Date.now());
+        }
+
+        document.querySelector("#start")
+            .addEventListener("click", function () {
+                const intervalId = setInterval(sayDate, 1000, 'abhishek');
+                console.log("app is started");
+            }
+            )
+
+            document.querySelector("#stop")
+            .addEventListener("click", function(){
+                clearInterval();
+                console.log("app is stopped  ");
+            })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center; background-color: grey; color: #fff;">
+
+    <h1>Object Itretion</h1>
+    <h1>for in loop</h1>
+    <h1>for each loop</h1>
+
+    <script>
+
+        const Myobj = {
+            js: "java script",
+            cpp: "c++",
+            rb: "ruby",
+            swift: "swift by apple"
+        }
+        for (const key in Myobj) {
+            //  console.log(key);
+        }
+
+        for (const key in Myobj) {
+            //   console.log(Myobj[key]);
+        }
+
+        for (const key in Myobj) {
+            // console.log(`${key} shortcut is for ${Myobj[key]}`);
+        }
+
+
+        const Programming = ["js", "py", "java", "cpp"];
+        for (const key in Programming) {
+            // console.log(key);
+        }
+        // for in loop pick key by default
+
+        // to get value of array by for in loop then write like this
+        for (const key in Programming) {
+            // console.log(Programming[key]);
+        }
+
+        const Codding = ["js", "py", "ruby", "java", "cpp"];
+
+        //    Codding.forEach( function(item){
+        //     console.log(item);
+        //    })
+
+        //    Codding.forEach( (item)=>{
+        //     console.log(item);
+        //    })
+
+        function print(item) {
+            // console.log(item);
+        }
+        Codding.forEach(print)
+        // here use refence of function no need to execute function
+
+        Codding.forEach((value, index, arr) => {
+            // console.log(value, index, arr);
+        })
+
+
+        const myCoding = [
+            {
+                languageName: "java script",
+                fileExt: "js"
+            },
+            {
+                languageName: "Python",
+                fileExt: "py"
+            },
+            {
+                languageName: "Java ",
+                fileExt: "java"
+            }
+        ]
+
+        myCoding.forEach((item) => {
+            // console.log(item.fileExt);
+        })
+
+
+
+        // check what is return by callback
+        const Coding = ["js", "py", "ruby", "java", "cpp"];
+        const value = Coding.forEach((item) => {
+            //  console.log(item);
+        })
+        //  console.log(value);  // callback returns nothing its undefine
+
+
+
+        const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
+        //const newNums = myNums.filter((num)=> num > 4)
+        // if we are use {} in callback then in {} wrtite return keyword otherwise callback returns empty array
+        const newNums = myNums.filter((item) => {
+            return item > 5
+        })
+        //console.log(newNums);
+        // filter also give a callback and have a condition to filter
+
+
+        // if we want use foreach to filter
+
+        const newNums1 = [];
+        myNums.forEach((num) => {
+            if (num > 3) {
+                newNums1.push(num)
+            }
+        })
+        //console.log(newNums1);
+
+
+
+        const books = [
+            { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
+            { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
+            { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
+            { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
+            { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
+            { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
+            { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
+            { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
+            { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
+        ];
+
+     let userBook = books.filter((bk) => bk.genre === 'History');
+
+    //  userBook = books.filter((bk)=>{
+    //     return bk.publish >= 2000
+    //  })
+    userBook = books.filter((bk)=>{
+        return bk.publish >= 1995 && bk.genre ==="History"
+     })
+
+     console.log(userBook);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

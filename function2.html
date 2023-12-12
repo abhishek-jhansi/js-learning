@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.75); color: #fff;">
+    <h2> Function with Array and Object</h2>
+
+<script>
+
+function calculateCartPrice (num1){
+  return num1
+}
+console.log(calculateCartPrice(200));
+//now we gave only one argument if user add more item then calculate more item's price
+
+function cartPrice(...num1)   // here gave rest operator to give one more parameter
+{
+    return num1
+}
+console.log(cartPrice(100, 2000, 300));   // rest operator all price in array
+
+
+function cartPrice1(val1, val2,...num1)   // here gave rest operator to give one more parameter
+{
+    return num1
+}
+console.log(cartPrice1(100, 2000, 300, 500)); 
+// here 2 parameter from starting is store in val1 and val2 and rest parameter store in num1 which is with rest operator
+
+const user = {
+    username : "abhishek",
+    price: 199
+}
+function handleObj(anyobject){
+    console.log(`Name is ${anyobject.username} and Price is ${anyobject.price}`);  
+}
+handleObj(user);
+
+// here we can pass object directly
+handleObj({
+    username :"abhi",
+    price:399
+})
+
+const myNewArray = [200, 400, 100, 600]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+console.log(returnSecondValue(myNewArray));
+// if we don't want to make array then we can pass array in argument of function
+
+console.log(returnSecondValue([200, 400, 600, 500]));
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

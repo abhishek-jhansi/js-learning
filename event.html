@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            display: block;
+            margin: 10px 0;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff; text-align: center;">
+    <h1>Event</h1>
+    <ul id="images">
+        <li>
+            <img src="https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure.webp"
+                alt="img-1" id="img-1">
+        </li>
+        <li>
+            <img src="https://platinumlist.net/guide/wp-content/uploads/2023/03/8359_img_worlds_of_adventure-big1613913137.jpg-1024x683.webp"
+                alt="" id="img-2">
+        </li>
+        <li>
+            <img src="https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure-cartoon-netwrok-1024x683.jpg"
+                alt="" id="img-3">
+        </li>
+        <li>
+            <img src="https://platinumlist.net/guide/wp-content/uploads/2023/03/c0e9c490-b7e7-47a6-9c43-3e10e8ddc9cb-4445-dubai-img-worlds-of-adventure-tickets-08-1024x639.jpg"
+                alt="" id="img-4">
+        </li>
+    </ul>
+
+    <script>
+        // document.querySelector("#img-1").addEventListener('click', function(){
+        //     alert("img-1 is clicked")
+        // })
+        // attachEvent
+        // jQuery - on
+        // document.querySelector("#img-1").addEventListener('click', function(e){
+        //     console.log(e);
+        // }, false)
+
+        /// addEventListener have third parameter by default false
+        /*    document.querySelector("#images").addEventListener('click', function(e){
+                console.log("clicked inside ul");
+            }, false)
+    
+            document.querySelector("#img-1").addEventListener('click', function(e){
+                 console.log("clicked inside img-1");
+             }, false)  */
+        // now bubbling is in action
+        // bubbling actions child to parent
+
+
+        /*    document.querySelector("#images").addEventListener('click', function (e) {
+                console.log("clicked inside ul");
+            }, true)
+    
+            document.querySelector("#img-1").addEventListener('click', function (e) {
+                console.log("clicked inside img-1");
+            }, true) */
+        // now action is event capturing this goes to parent to child
+
+
+        // want to stop prpagation of event
+
+
+        /*   document.querySelector("#images").addEventListener('click', function (e) {
+               console.log("clicked inside ul");
+           }, false)
+   
+           document.querySelector("#img-1").addEventListener('click', function (e) {
+               console.log("clicked inside img-1");
+               e.stopImmediatePropagation();
+           }, false)   */
+
+        document.querySelector('#images').addEventListener(
+            'click', function (e) {
+                // console.log(e);
+                // console.log(e.target);
+                //  console.log(e.target.parentNode);
+                let removeIt = e.target.parentNode;
+                //  removeIt.remove();
+                // other ay to remove 
+                // removeIt.parentNode.removeChild(removeIt);
+                // there r a pronlem if we clicked on li then all element are removed
+                // so there should be used condition
+                console.log(e.target.tagName);
+            if(e.target.tagName === 'IMG'){
+                let removeIt = e.target.parentNode;
+                removeIt.remove();
+            }
+            }
+        )
+
+
+
+    </script>
+</body>
+
+</html>

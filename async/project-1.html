@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Auto BG changer</title>
+    <style>
+        button {
+            padding: 10px 15px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff; text-align: center;">
+    <h1>Click on buttons to change and stable body background color</h1>
+    <button id="start"> START</button>
+    <button id="stop"> STOP</button>
+
+    <script>
+
+        const randomColor = function () {
+            const hex = '0123456789ABCDEF';
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)];
+
+            }
+            return color;
+        }
+        console.log("Random color is => " + randomColor());
+
+        let intervalId;
+        const startChangingColor = function () {
+
+            //  intervalId =   setInterval(changeBgColor, 1000)
+            if (!intervalId) {
+                intervalId = setInterval(changeBgColor, 1000);
+            
+            }
+            function changeBgColor() {
+                document.body.style.backgroundColor = randomColor()
+
+            }
+
+        };
+        document.querySelector("#start").addEventListener
+            ('click', startChangingColor);
+
+        const stopChangingColor = function () {
+            clearInterval(intervalId);
+            intervalId = null;
+            console.log("STOPPED");
+        };
+        document.querySelector("#stop").addEventListener
+            ('click', stopChangingColor);
+
+    </script>
+</body>
+
+</html>
